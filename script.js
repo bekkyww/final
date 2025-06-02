@@ -4,15 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const articlesContainer = document.getElementById("articles-container");
   const mostPopularContainer = document.getElementById("most-popular");
 
+  // Функция для обновления текста кнопки в зависимости от темы
+  function updateThemeToggleButton(theme) {
+    themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+
   // Инициализация темы
   const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", savedTheme);
+  updateThemeToggleButton(savedTheme);
 
   themeToggle.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
+    updateThemeToggleButton(newTheme);
   });
 
   fetch("articles.json")
