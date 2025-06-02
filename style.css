@@ -18,5 +18,6 @@ body {
 
 .card {
   background-color: var(--card-bg);
+  color: var(--text-color);
   transition: background-color 0.3s;
 }
