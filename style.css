@@ -21,3 +21,11 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s;
 }
+
+[data-theme="dark"] .card-subtitle {
+  color: #ddd !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #ccc !important;
+}
