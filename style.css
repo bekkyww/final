@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #f8f9fa;
+    --header-bg: #ffffff;
+    --btn-outline-color: #0d6efd;
+}
+
+[data-bs-theme="dark"] {
+    --primary-color: #66b2ff;
+    --secondary-color: #adb5bd;
+    --background-color: #121212;
+    --text-color: #e9ecef;
+    --card-bg: #1e1e1e;
+    --header-bg: #212529;
+    --btn-outline-color: #66b2ff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    background-color: var(--card-bg);
+    min-height: calc(100vh - 56px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    font-weight: 600;
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+#sortSelect {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--secondary-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sortSelect:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+#mostPopular {
+    background-color: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mostPopular .card-title,
+#mostPopular h2 {
+    color: var(--text-color);
+}
+
+#articlesGrid .card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+#articlesGrid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#articlesGrid .card .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#articlesGrid .card .card-text {
+    color: var(--text-color);
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.badge {
+    font-size: 0.8rem;
+}
+
+.reading-time {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.btn-outline-light {
+    color: var(--btn-outline-color);
+    border-color: var(--btn-outline-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--btn-outline-color);
+    color: var(--background-color);
+    border-color: var(--btn-outline-color);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-body p.lead {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+
+    #mostPopular h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-body p.lead {
+        font-size: 1rem;
+    }
+}
