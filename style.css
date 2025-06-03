@@ -1,31 +1,81 @@
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --card-bg: #f8f9fa;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #f8f9fa;
 }
 
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --card-bg: #1e1e1e;
+[data-bs-theme="dark"] {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --background-color: #212529;
+    --text-color: #f8f9fa;
+    --card-bg: #2c3034;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    background-color: var(--card-bg);
+    min-height: calc(100vh - 56px);
+    transition: background-color 0.3s ease;
 }
 
 .card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  transition: background-color 0.3s;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
-[data-theme="dark"] .card-subtitle {
-  color: #ffffff !important;  /* светло-серый, лучше виден на тёмном фоне */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-[data-theme="dark"] .text-muted {
-  color: #ffffff !important; /* чуть светлее, чтобы хорошо читалось */
+.badge {
+    font-size: 0.8rem;
+}
+
+.reading-time {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+#mostPopular {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+#mostPopular .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+    
+    #mostPopular .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .modal-body {
+        font-size: 0.9rem;
+    }
 }
