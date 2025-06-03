@@ -1,7 +1,7 @@
 let articles = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('Articles.json')
+    fetch('articles.json')
         .then(response => {
             if (!response.ok) throw new Error('Failed to load Articles.json');
             console.log('JSON loaded successfully');
