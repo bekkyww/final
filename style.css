@@ -18,6 +18,21 @@
     --btn-outline-color: #66b2ff;
 }
 
+[data-bs-theme="dark"] .navbar {
+    background-color: #1e1e1e !important;
+    color: white;
+}
+
+[data-bs-theme="dark"] .navbar .navbar-brand {
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .navbar .btn {
+    border-color: white;
+    color: white;
+}
+
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
