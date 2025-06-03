@@ -47,7 +47,8 @@ function initDashboard() {
 }
 
 function updateArticles() {
-    const activeCategory = document.querySelector('#categoryList .nav-link.active')?.dataset.category || 'all';
+    const activeCategoryLink = document.querySelector('#categoryList .nav-link.active');
+    const activeCategory = activeCategoryLink ? activeCategoryLink.dataset.category : 'all';
     const sortBy = document.getElementById('sortSelect').value;
     const articlesGrid = document.getElementById('articlesGrid');
 
