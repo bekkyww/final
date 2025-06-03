@@ -155,7 +155,6 @@ function showArticleModal(article) {
     document.getElementById('modalTitle').textContent = article.title;
     document.getElementById('modalBody').innerHTML = `
         <p><span class="badge bg-primary">${article.category}</span></p>
-        <img src="https://via.placeholder.com/800x400" class="img-fluid mb-3 rounded" alt="Article image">
         <p class="lead">${article.content}</p>
     `;
     document.getElementById('modalMeta').innerHTML = `
