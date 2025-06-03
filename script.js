@@ -1,4 +1,3 @@
-
 let articles = [];
 
 document.addEventListener('DOMContentLoaded', () => {
