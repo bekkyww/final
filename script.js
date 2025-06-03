@@ -123,8 +123,18 @@ function displayMostPopular() {
 function populateCategories() {
     const categories = [...new Set(articles.map(a => a.category))];
     const categoryList = document.getElementById('categoryList');
+    categoryList.innerHTML = '';
 
-    categoryList.innerHTML = '<li class="nav-item"><a class="nav-link active" href="#" data-category="all">All</a></li>';
+    const allLi = document.createElement('li');
+    allLi.className = 'nav-item';
+    allLi.innerHTML = `<a class="nav-link active" href="#" data-category="all">All</a>`;
+    allLi.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('#categoryList .nav-link').forEach(el => el.classList.remove('active'));
+        allLi.querySelector('.nav-link').classList.add('active');
+        updateArticles();
+    });
+    categoryList.appendChild(allLi);
 
     categories.forEach(category => {
         const li = document.createElement('li');
@@ -139,6 +149,7 @@ function populateCategories() {
         categoryList.appendChild(li);
     });
 }
+
 
 function showArticleModal(article) {
     document.getElementById('modalTitle').textContent = article.title;
